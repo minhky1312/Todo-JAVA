@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1>Edit User</h1>
+
+
+    <form th:object="${cus}" th:action="@{save}" action="#" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label th:text="Name" th:for="name"></label>
+            <input type="text" th:field="*{name}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <div>
+            <label th:text="Ocupation" th:for="occupation"></label>
+            <input type="text" th:field="*{occupation}" class="form-control"/>
+        </div>
+
+        <div>
+            <label th:text="OcupationDetails" th:for="occupationdetail"></label>
+            <input type="text" th:field="*{occupationdetail}" class="form-control"/>
+        </div>
+
+        <div>
+            <label th:text="Contact" th:for="contact"></label>
+            <input type="text" th:field="*{contact}" class="form-control"/>
+        </div>
+
+        <div>
+            <label th:text="Pet" th:for="customerpet"></label>
+            <input type="text" th:field="*{customerpet}" class="form-control"/>
+        </div>
+        <div style="clear: both; display: block; height: 10px"></div>
+        <input type="submit" class="btn btn-success" value="Save"/>
+    </form>
+</div>
+</body>
+</html>

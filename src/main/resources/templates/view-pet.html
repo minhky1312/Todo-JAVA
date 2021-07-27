@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />-->
+
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+<h1>View all pets</h1>
+
+<ul th:each="pets : ${petss}">
+   <li th:text="${pets.name}">
+
+   </li>
+</ul>
+
+<div class="table-responsive">
+
+    <table class="table table-striped custom-table">
+        <thead>
+        <tr>
+            <th scope="col">
+                <label class="control control--checkbox">
+                    <input type="checkbox"  class="js-check-all"/>
+                    <div class="control__indicator"></div>
+                </label>
+            </th>
+            <th scope="col">Order</th>
+            <th scope="col">Name</th>
+            <th scope="col">Occupation</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Education</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr scope="row" th:each="customer: ${petss}" >
+            <td>
+                <label class="control control--checkbox">
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                </label>
+            </td>
+            <td th:text="${customer.id}">
+
+            </td>
+            <td class="pl-0">
+                <div class="d-flex align-items-center">
+                    <label class="custom-control ios-switch">
+                        <input type="checkbox" class="ios-switch-control-input" checked="">
+                        <span class="ios-switch-control-indicator"></span>
+                    </label>
+
+                    <a href="#" th:text="${customer.name}"></a>
+                </div>
+            </td>
+            <td>
+                Web Designer
+                <small class="d-block">Far far away, behind the word mountains</small>
+            </td>
+            <td>+63 983 0962 971</td>
+            <td>NY University</td>
+            <td><a href="#" class="more">Details</a></td>
+
+        </tr>
+
+
+
+        </tbody>
+    </table>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
